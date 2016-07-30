@@ -1,25 +1,11 @@
 module.exports = function(grunt){
 	
 	
-	//require('load-grunt-tasks')(grunt, {pattern: 'grunt-contrib-*'});
 
-	//config
 	grunt.initConfig({
 		
 		
 		pkg: grunt.file.readJSON('package.json'),
-		/*
-		task: {
-			options: {
-				compress: true
-			}
-			target1: {
-				src:
-				target:	
-			}
-		}	
-		*/
-		
 		
 		qunit: {
 			all: ['src/*.less']
@@ -41,7 +27,6 @@ module.exports = function(grunt){
 		csslint: {
 			check: {
 				src: 'build/styles.css'
-				//src: '<%= less.build.dest %>'
 			}	
 		},
 		
@@ -77,7 +62,6 @@ module.exports = function(grunt){
 			files: {
 				src: 
 					'index.html'
-					//'src/*.less'
 				
 			},
 			options: { 
@@ -93,18 +77,6 @@ module.exports = function(grunt){
 		}
 	});
 	
-	//require('load-grunt-tasks')(grunt);
-	//require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-	//require('load-grunt-tasks')(grunt);
-	//plugin
-	
-	/*grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-browser-sync');
-	*/
 	
 	
 	[
@@ -118,11 +90,6 @@ module.exports = function(grunt){
 	].forEach(grunt.loadNpmTasks);
 	
 
-	//tasks
-	//grunt.registerTask('default', []);
-	
-	//grunt.registerTask('default', ['less','csslint','cssmin','connect','browser_sync','watch']);
-	//grunt.registerTask('default', ['less','csslint','cssmin','connect','qunit','watch']);
 	grunt.registerTask('default', ['less','csslint','cssmin','jshint','connect','watch']);
 	grunt.registerTask('task1', 'less:build1');
 	grunt.registerTask('task2', 'less:build2');
